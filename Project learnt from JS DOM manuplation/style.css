@@ -1,0 +1,392 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.svg {
+  height: 30px;
+  width: 30px;
+  background-color: orangered;
+  border-radius: 50%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header,
+section,
+footer {
+  width: 80%;
+  height: auto;
+}
+
+.header {
+  background-color: antiquewhite;
+  height: 100dvh;
+  width: 100%;
+}
+.sticky {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+}
+
+.nav {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+.nav-links .nav-item {
+  padding: 2rem;
+}
+.nav-links .nav-item .nav-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.nav-link:hover {
+  color: black;
+}
+
+.logo {
+  transition: 0.5s;
+}
+.nav-link-btn {
+  background-color: orangered;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+/* header title */
+
+.header-title {
+  margin-inline: auto;
+  max-width: 80dvw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+}
+
+.header-title-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.header-title-content h1 {
+  font-size: 3rem;
+  line-height: 4rem;
+  letter-spacing: 0.2rem;
+}
+.highlight {
+  position: relative;
+  z-index: 1;
+  padding: 0 6px;
+}
+.highlight::after {
+  inset: 0;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  transform: skewX(-20deg);
+  background: linear-gradient(yellow, green);
+  z-index: -1;
+}
+
+.btn-text {
+  border: none;
+  background-color: antiquewhite;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px; /* move underline farther */
+  cursor: pointer;
+}
+
+.btn-text:hover {
+  color: orangered;
+}
+.header-img {
+  width: 30dvh;
+}
+
+/* for all section                           */
+
+/* section 1 ----------------------------- */
+
+.section {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.section-hidden {
+  opacity: 0;
+  transform: translateY(100px);
+}
+.section-title {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.section-discription {
+  font-size: 2rem;
+}
+
+.section-header {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 200px);
+  gap: 3rem;
+  justify-content: flex-end;
+}
+
+.features-img {
+  object-fit: cover;
+  width: 50%;
+  margin-left: 20%;
+}
+
+.features-feature {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: 20%;
+}
+
+/* section 2 ================================ */
+.operations {
+  position: relative;
+  width: 70%;
+  height: 50dvh;
+}
+
+.operations-tab-container {
+  width: 100%;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.btn {
+  border: none;
+  padding: 4px 8px;
+  border-radius: 8px;
+  z-index: 100;
+  border: 2px solid black;
+}
+.operations-tab--1 {
+  background-color: green;
+}
+.operations-tab--2 {
+  background-color: orange;
+}
+.operations-tab--3 {
+  background-color: palevioletred;
+}
+.operations-content {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-columns: 100px 1fr;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  height: 90%;
+  width: 100%;
+  padding: 4rem;
+  border: 2px solid black;
+}
+.operations-icon {
+  grid-column: 1;
+}
+.operations-header {
+  grid-column: 2;
+}
+.operations-content p {
+  grid-column: 2;
+  grid-row: 2;
+}
+.operations-tab {
+  display: flex;
+  gap: 10px;
+}
+.operations-tab--active {
+  transform: translateY(-5px);
+}
+
+.operations-content--active {
+  background-color: antiquewhite;
+  z-index: 10;
+}
+/* section 3 --------------------NEED FIX------------ */
+
+.slider {
+  width: 50%;
+  height: 50dvh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.slide {
+  position: absolute;
+}
+
+.testimonial {
+  background-color: antiquewhite;
+  padding: 1rem;
+  margin-inline: auto;
+  width: 85%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.testimonial-text {
+  font-size: 12px;
+}
+.slider-btn {
+  position: absolute;
+  border: none;
+  padding: 5px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.2s;
+}
+.slider-btn:hover {
+  background-color: orangered;
+}
+
+.slider-btn--left {
+  left: 0px; /* <-- inside the slider */
+}
+
+.slider-btn--right {
+  right: 0px; /* <-- inside the slider */
+}
+.dots {
+  position: absolute;
+  bottom: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dots-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dots-dot--active {
+  background-color: black;
+}
+
+/* SIGN UP--------------section 3---------------- */
+
+.section-sign-up {
+  width: 100%;
+  height: 300px;
+  background-color: rgb(3, 3, 31);
+}
+
+.section-sign-title .section-header {
+  color: white;
+  font-size: 2rem;
+  width: 70%;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.footer {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: rgb(3, 3, 31);
+  border-top: 1px solid gray;
+}
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.footer-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  transition: 0.5s;
+}
+
+.footer-link:hover {
+  color: orangered;
+}
+.footer-copyright {
+  color: white;
+}
+
+.footer-copyright .footer-link {
+  color: orangered;
+}
