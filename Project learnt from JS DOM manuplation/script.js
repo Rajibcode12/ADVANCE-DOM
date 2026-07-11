@@ -1,8 +1,16 @@
 "use strict";
 
-// on clcick learn btn move to feature
+//DOM SELECTION GLOBAL
 const btnScrollTo = document.querySelector(".btn-text");
 const section1 = document.querySelector("#section-1");
+const allSections = document.querySelectorAll(".section");
+const nav = document.querySelector(".nav");
+const footerNav = document.querySelector(".footer-nav");
+const tabsContainer = document.querySelector(".operations-tab-container");
+const tabs = document.querySelectorAll(".operations-tab");
+const tabsContent = document.querySelectorAll(".operations-content");
+// on clcick learn btn move to feature
+
 
 btnScrollTo.addEventListener("click", function (e) {
   e.preventDefault();
@@ -17,8 +25,6 @@ btnScrollTo.addEventListener("click", function (e) {
 });
 
 // on scroll move offset all section reveal section
-
-const allSections = document.querySelectorAll(".section");
 const revealSection = function (entries, observer) {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
@@ -40,7 +46,6 @@ allSections.forEach(function (section) {
 // feature img reveal on scroll
 
 // on hover nav link bright only the hover navlink
-const nav = document.querySelector(".nav");
 
 const handleHoverHeader = function (e) {
   if (!e.target.classList.contains("nav-link")) return;
@@ -60,8 +65,6 @@ nav.addEventListener("mouseover", handleHoverHeader.bind(0.5));
 nav.addEventListener("mouseout", handleHoverHeader.bind(1));
 
 // for footer
-
-const footerNav = document.querySelector(".footer-nav");
 
 const handleHoverFooter = function (e) {
   if (!e.target.classList.contains("footer-link")) return;
@@ -111,10 +114,6 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 headerObserver.observe(header);
 
 //operation btn on click puss up rest down and change side as per data
-
-const tabsContainer = document.querySelector(".operations-tab-container");
-const tabs = document.querySelectorAll(".operations-tab");
-const tabsContent = document.querySelectorAll(".operations-content");
 
 tabsContainer.addEventListener("click", function (e) {
   e.preventDefault();
